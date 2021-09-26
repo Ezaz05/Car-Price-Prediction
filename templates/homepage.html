@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body background='static/a.jpg'>
+        <form action="{{ url_for('predict')}}" method="post">
+        <center>  <br><br><br><br>  <font color='orange', size=7><i><b>Used Car Price Predictions</b></i></font><br><br><br>
+            <font color='black', size=5>Purchased Year:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="first" name="Year" type="number" placeholder='Year In Number'></font><br><br>
+            <font color='black', size=5>Showroom Price:&nbsp;&nbsp;&nbsp;<input id="second" name="Present_Price" required="required", placeholder='Price In lakhs'></font><br><br>
+            <font color='black', size=5>Kilometers Drived:&nbsp;&nbsp;<input id="third" name="Kms_Driven" required="required", placeholder='KMS In Number'></font><br><br>
+            <font color='black', size=5>Number of Owners:&nbsp;&nbsp;<input id="fourth" name="Owner" required="required", placeholder='In Number'></font><br><br>
+            <font color='black', size=5>Fuel Type:&nbsp;&nbsp;<select name="Fuel_Type_Petrol" id="fuel" required="required"></font><br><br>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>&nbsp;
+            <font color='black', size=5>Seller Type:&nbsp;&nbsp;<select name="Seller_Type_Individual" id="resea" required="required"><br><br>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>&nbsp;
+            <font color='black', size=5>Transmission Type:&nbsp;&nbsp;<select name="Transmission_Mannual" id="research" required="required"><br><br>
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><br><button id="sub" type="submit" value='submit'>Selling Price</button>
+            <br>
+        </form>
+        <br><br><h3>{{ prediction_text }}<h3>
+</center>    
+</body>
+</html>
